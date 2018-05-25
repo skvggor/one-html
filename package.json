@@ -2,6 +2,17 @@
   "name": "one-html",
   "version": "0.0.1",
   "description": "one-html",
+  "config": {
+    "css_source": "src/stylus/output",
+    "css_output_style": "--compress",
+    "css_output": "dist/css"
+  },
+  "scripts": {
+    "css-lint": "npx stylint ${npm_package_config_css_source}/../ --config .stylintrc",
+    "css-compile": "npx stylus $npm_package_config_css_source $npm_package_config_css_output_style --out $npm_package_config_css_output --use ./node_modules/nib/lib/nib",
+    "css": "npm run css-lint && npm run css-compile",
+    "css-watch": "npm run css-compile -- --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcker/one-html.git"
@@ -17,5 +28,14 @@
   "bugs": {
     "url": "https://github.com/marcker/one-html/issues"
   },
-  "homepage": "https://github.com/marcker/one-html#readme"
+  "homepage": "https://github.com/marcker/one-html#readme",
+  "devDependencies": {
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "nib": "^1.1.2",
+    "stylint": "^1.5.9",
+    "stylus": "^0.54.5",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
+  }
 }
