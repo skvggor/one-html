@@ -6,7 +6,7 @@ Generates a static HTML page in a single file.
 
 ## TODO
 
-- Write readme.md with instructions on how to user it.
+- Write readme.md with instructions on how to use it.
 
 ## License
 
